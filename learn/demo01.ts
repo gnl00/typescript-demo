@@ -314,6 +314,63 @@ console.log(Week[4].concat('a','b', 'c'))
 
 // 九、范型
 
+// 2、在类中使用范型
+class Kitchen<T> {
+    makeSth(param: T) {
+        console.log('making ...' + param + ' in the kitchen')
+    }
+}
+
+let kit = new Kitchen()
+kit.makeSth(111)
+
+// 3、在接口中使用范型
+interface KeyValue<T, U> {
+    key: T,
+    value: U
+}
+
+let kv1: KeyValue<string, number> = {
+    key: 'key1',
+    value: 111
+}
+
+let kv2: KeyValue<number, boolean> = {
+    key: 2222,
+    value: false
+}
+
+console.log(kv1, kv2)
+
+// 3、在数组中使用范型
+let myNumArray: Array<number> = [1,2,3,4]
+
+console.log(myNumArray)
+
 // 十、类型别名
+// 使用 type 给类型取别名
+type myNumber = number
+let type_num: myNumber = 1
+
+type myUnionType = number | string
+let u1: myUnionType = 1111
+u1 = '111122'
 
 // 十一、交叉类型
+// 用 & 进行连接
+// 把类型都组合起来，变量赋值必须满足 交叉类型
+
+interface ITest {
+    key: string
+}
+
+type test = ITest & { value: any }
+
+let my_test: test = {
+    key: '1111',
+    value: 1222
+}
+
+function fun2(params): string {
+    return params
+}

@@ -224,5 +224,25 @@ console.log(Week[4].concat('a', 'b', 'c'));
 // 2、字符串枚举
 // 3、常量枚举
 // 九、范型
+// 2、在类中使用范型
+var Kitchen = /** @class */ (function () {
+    function Kitchen() {
+    }
+    Kitchen.prototype.makeSth = function (param) {
+        console.log('making ...' + param + ' in the kitchen');
+    };
+    return Kitchen;
+}());
+var kit = new Kitchen();
+kit.makeSth(111);
+var kv1 = {
+    key: 'key1',
+    value: 111
+};
+var kv2 = {
+    key: 2222,
+    value: false
+};
+console.log(kv1, kv2);
 // 十、类型别名
 // 十一、交叉类型
